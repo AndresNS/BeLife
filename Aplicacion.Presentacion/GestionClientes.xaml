@@ -1,0 +1,100 @@
+﻿<Window x:Class="Aplicacion.Presentacion.GestionClientes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicacion.Presentacion"
+        mc:Ignorable="d"
+        Title="GestionClientes" Height="450" Width="800">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="792">
+            <TabItem Header="Registro de Clientes" Name="tabRegistro">
+                <Grid Background="#ffffffff">
+                    <Label Name="lblIngresarRut" Content="Rut" HorizontalAlignment="Right" Margin="0,74,530,0" VerticalAlignment="Top"/>
+                    <Label Name="lblIngresarNombres" Content="Nombres" HorizontalAlignment="Right" Margin="0,106,530,0" VerticalAlignment="Top"/>
+                    <Label Name="lblIngresarApellidos" Content="Apellidos" HorizontalAlignment="Right" Margin="0,138,530,0" VerticalAlignment="Top"/>
+                    <Label Name="lblIngresarFechaNacimiento" Content="Fecha de Nacimiento" HorizontalAlignment="Right" Margin="0,170,530,0" VerticalAlignment="Top"/>
+                    <Label Name="lblIngresarSexo" Content="Sexo" HorizontalAlignment="Right" Margin="0,202,530,0" VerticalAlignment="Top"/>
+                    <Label Name="lblIngresarEstadoCivil" Content="Estado Civil" HorizontalAlignment="Right" Margin="0,234,530,0" VerticalAlignment="Top"/>
+
+                    <TextBox Name="txtIngresarRut" HorizontalAlignment="Left" Height="23" Margin="261,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145"/>
+                    <TextBox Name="txtIngresarNombres" HorizontalAlignment="Left" Height="23" Margin="261,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145"/>
+                    <TextBox Name="txtIngresarApellidos" HorizontalAlignment="Left" Height="23" Margin="261,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145"/>
+                    <DatePicker Name="dpIngresarFechaNacimiento" HorizontalAlignment="Left" Margin="261,171,0,0" VerticalAlignment="Top"/>
+                    <ComboBox Name="cbxIngresarSexo" HorizontalAlignment="Left" Margin="261,206,0,0" VerticalAlignment="Top" Width="145"/>
+                    <ComboBox Name="cbxIngresarEstadoCivil" HorizontalAlignment="Left" Margin="261,238,0,0" VerticalAlignment="Top" Width="145"/>
+                    <Button Style="{StaticResource Agregar_}"  Name="btnIngresar" Content="" HorizontalAlignment="Left" Margin="468,78,0,0" VerticalAlignment="Top" Width="75" Click="btnIngresar_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Listado de Clientes" Name="tabListado">
+                <Grid Background="#FFffffff">
+
+                    <DataGrid Name="dgListadoClientes" HorizontalAlignment="Left" Height="284" Margin="46,70,0,0" VerticalAlignment="Top" Width="697"/>
+
+                    <ComboBox  Name="cbxFilterRut" HorizontalAlignment="Left" Margin="232,23,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbxFilterRut_SelectionChanged"/>
+                    <ComboBox  x:Name="cbxFilterSexo" HorizontalAlignment="Left" Margin="385,23,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbxFilterSexo_SelectionChanged"/>
+                    <ComboBox  x:Name="cbxFilterCivil" HorizontalAlignment="Left" Margin="532,23,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbxFilterCivil_SelectionChanged"/>
+                    <Button Style="{StaticResource DataSearche_}" Content="Filtrar" Name="btnFilter" HorizontalAlignment="Left" Margin="693,10,0,0" VerticalAlignment="Top" Click="btnFilter_Click"/>
+                    <Button Name="BtnFilterReset" Content="Reset" HorizontalAlignment="Left" Margin="134,23,0,0" VerticalAlignment="Top" Width="75" Click="BtnFilterReset_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Modificar Cliente" Name="tabModificar">
+                <Grid Background="#FFffffff">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="367*"/>
+                        <ColumnDefinition Width="19*"/>
+                        <ColumnDefinition Width="400*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button  Name="btnModificarIngRut" Content="Ingresar Rut" HorizontalAlignment="Left" Margin="224,15,0,0" VerticalAlignment="Top" Width="134" Click="btnModificarIngRut_Click"/>
+                    <Button Name="btnModificarSelRut" Content="Seleccionar Rut" HorizontalAlignment="Left" Margin="17,15,0,0" VerticalAlignment="Top" Width="134" Click="btnModificarSelRut_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <ComboBox Name="cbxModificarRut" IsEnabled="False" HorizontalAlignment="Left" Margin="17,55,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="cbxModificarRut_SelectionChanged" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                    <Label Name="lblModificarRut" Content="Rut" HorizontalAlignment="Right" Margin="0,51,152,0" VerticalAlignment="Top"/>
+                    <Label Content="Rut" HorizontalAlignment="Right" Margin="0,94,120,0" VerticalAlignment="Top"/>
+                    <Label Name="lblModificarNombres" Content="Nombres" HorizontalAlignment="Right" Margin="0,126,120,0" VerticalAlignment="Top"/>
+                    <Label Name="lblModificarApellidos" Content="Apellidos" HorizontalAlignment="Right" Margin="0,158,120,0" VerticalAlignment="Top"/>
+                    <Label Name="lblModificarFechaNacimiento" Content="Fecha de Nacimiento" HorizontalAlignment="Right" Margin="0,190,120,0" VerticalAlignment="Top"/>
+                    <Label Name="lblModificarSexo" Content="Sexo" HorizontalAlignment="Right" Margin="0,222,120,0" VerticalAlignment="Top"/>
+                    <Label Name="lblModificarEstadoCivil" Content="Estado Civil" HorizontalAlignment="Right" Margin="0,254,120,0" VerticalAlignment="Top"/>
+
+                    <TextBox Name="txtModificarRut" HorizontalAlignment="Left" Height="23" Margin="220,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145"/>
+                    <Label Name="lblModificarRutSeleccionado" Content="" HorizontalAlignment="Left" Margin="252,94,0,0" VerticalAlignment="Top" Width="113"/>
+                    <TextBox Name="txtModificarNombres" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="252,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145" Grid.ColumnSpan="3"/>
+                    <TextBox Name="txtModificarApellidos" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="252,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145" Grid.ColumnSpan="3"/>
+                    <DatePicker Name="dpModificarFechaNacimiento" IsEnabled="False" HorizontalAlignment="Left" Margin="252,191,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <ComboBox Name="cbxModificarSexo" IsEnabled="False" HorizontalAlignment="Left" Margin="252,226,0,0" VerticalAlignment="Top" Width="145" Grid.ColumnSpan="3"/>
+                    <ComboBox Name="cbxModificarEstadoCivil" IsEnabled="False" HorizontalAlignment="Left" Margin="252,258,0,0" VerticalAlignment="Top" Width="145" Grid.ColumnSpan="3"/>
+                    <Button Style="{StaticResource ClientSearch_}" Name="btnBuscarCliente" Content="" HorizontalAlignment="Left" Margin="189,28,0,0" VerticalAlignment="Top" Click="btnBuscarCliente_Click" Grid.Column="2" />
+                    <Button Style="{StaticResource ClientUpdate_}" Name="btnModificarCliente" IsEnabled="False" Content="" HorizontalAlignment="Left" Margin="88,262,0,0" VerticalAlignment="Top" Click="btnModificarCliente_Click" Grid.Column="2"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Eliminar Cliente" Name="tabEliminar">
+                <Grid Background="#ffffff">
+                    <Label Name="lblEliminarRut" Content="Rut" HorizontalAlignment="Right" Margin="0,70,602,0" VerticalAlignment="Top"/>
+
+                    <Button  Name="btnEliminarIngRut" Content="Ingresar Rut" HorizontalAlignment="Left" Margin="200,21,0,0" VerticalAlignment="Top" Width="134" Click="btnEliminarIngRut_Click"/>
+                    <Button Name="btnEliminarSelRut" Content="Seleccionar Rut" HorizontalAlignment="Left" Margin="387,21,0,0" VerticalAlignment="Top" Width="134" Click="btnEliminarSelRut_Click"/>
+                    <ComboBox Name="cbxEliminarRut" IsEnabled="False" HorizontalAlignment="Left" Margin="387,74,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="cbxEliminarRut_SelectionChanged"/>
+
+                    <TextBox Name="txtEliminarRut" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="189,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145"/>
+                    <Button Name="btnEliminarCliente" Style="{StaticResource Delete_}" HorizontalAlignment="Left" Margin="611,46,0,0" VerticalAlignment="Top"  Click="btnEliminarCliente_Click" />
+
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

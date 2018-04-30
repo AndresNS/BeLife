@@ -1,0 +1,104 @@
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.exe.config
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.exe
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.pdb
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csprojResolveAssemblyReference.cache
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\MainWindow.g.cs
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\App.g.cs
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion_MarkupCompile.cache
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion_MarkupCompile.lref
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\MainWindow.baml
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.g.resources
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.Properties.Resources.resources
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.GenerateResource.cache
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.CoreCompileInputs.cache
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.exe
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.pdb
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.dll
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\EntityFramework.dll
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.pdb
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.dll.config
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\EntityFramework.xml
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.CopyComplete
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionClientes.g.cs
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionContratos.g.cs
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionClientes.baml
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionContratos.baml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.exe.config
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.exe
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.pdb
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.dll
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.pdb
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.dll.config
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\EntityFramework.xml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionClientes.g.cs
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionContratos.g.cs
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\MainWindow.g.cs
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\App.g.cs
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion_MarkupCompile.cache
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion_MarkupCompile.lref
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionClientes.baml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionContratos.baml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\MainWindow.baml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.g.resources
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.Properties.Resources.resources
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.GenerateResource.cache
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.CopyComplete
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.exe
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.pdb
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.exe.config
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.exe
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.pdb
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.dll
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.pdb
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.dll.config
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\EntityFramework.xml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionClientes.g.cs
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionContratos.g.cs
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\MainWindow.g.cs
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\App.g.cs
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion_MarkupCompile.cache
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion_MarkupCompile.lref
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionClientes.baml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionContratos.baml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\MainWindow.baml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\styles.baml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.g.resources
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.Properties.Resources.resources
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.GenerateResource.cache
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.CopyComplete
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.exe
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.pdb
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.exe.config
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.exe
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Presentacion.pdb
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.dll
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.pdb
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\Aplicacion.Datos.dll.config
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\EntityFramework.xml
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionClientes.g.cs
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionContratos.g.cs
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\MainWindow.g.cs
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\App.g.cs
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion_MarkupCompile.cache
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion_MarkupCompile.lref
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\styles.baml
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionClientes.baml
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\GestionContratos.baml
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\MainWindow.baml
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.g.resources
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.Properties.Resources.resources
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.GenerateResource.cache
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.csproj.CopyComplete
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.exe
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Presentacion\obj\Debug\Aplicacion.Presentacion.pdb

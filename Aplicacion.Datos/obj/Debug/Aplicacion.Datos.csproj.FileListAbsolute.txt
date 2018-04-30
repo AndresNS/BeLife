@@ -1,0 +1,36 @@
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\bin\Debug\Aplicacion.Datos.dll.config
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\bin\Debug\Aplicacion.Datos.dll
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\bin\Debug\Aplicacion.Datos.pdb
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.dll
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.xml
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.csprojResolveAssemblyReference.cache
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.csproj.CoreCompileInputs.cache
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.csproj.CopyComplete
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.dll
+D:\Proyectos\Programacion\C#\BeLife\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.pdb
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\bin\Debug\Aplicacion.Datos.dll.config
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\bin\Debug\Aplicacion.Datos.dll
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\bin\Debug\Aplicacion.Datos.pdb
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.dll
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.xml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.csprojResolveAssemblyReference.cache
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.csproj.CoreCompileInputs.cache
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.csproj.CopyComplete
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.dll
+C:\Users\ivan\source\repos\Version 21-04-2018 19_32\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.pdb
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\bin\Debug\Aplicacion.Datos.dll.config
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\bin\Debug\Aplicacion.Datos.dll
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\bin\Debug\Aplicacion.Datos.pdb
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.dll
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.xml
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.csprojResolveAssemblyReference.cache
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.csproj.CoreCompileInputs.cache
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.csproj.CopyComplete
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.dll
+C:\Users\Andres\Desktop\este\Version 21-04-2018 19_32 - copia\SolucionBeLife\Aplicacion.Datos\obj\Debug\Aplicacion.Datos.pdb
