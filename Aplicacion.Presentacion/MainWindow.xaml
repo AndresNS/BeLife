@@ -13,11 +13,20 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <Button Style="{StaticResource Clientes_}" Name="btnGestionClientes" Content="" HorizontalAlignment="Left" Margin="266,193,0,0" VerticalAlignment="Top"  Click="btnGestionClientes_Click"/>
-        <Button Style="{StaticResource Contratos_}" Name="btnGestionContratos" Content="" HorizontalAlignment="Left" Margin="431,193,0,0" VerticalAlignment="Top"   Click="btnGestionContratos_Click"/>
-        <Image  Source="img/logo_BeLife.png" HorizontalAlignment="Left" Height="100" Margin="226,54,0,0" VerticalAlignment="Top" Width="289"/>
 
-
-    </Grid>
+    <StackPanel>
+        <!-- Logo -->
+        <Image Source="img/logo_BeLife.png" Height="100" Margin="50"/>
+        
+        <!-- Botones -->
+        <Grid Margin="200 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource Clientes_}" Grid.Column="0" Name="btnGestionClientes" Content="" Click="btnGestionClientes_Click"/>
+            <Button Style="{StaticResource Contratos_}" Grid.Column="1" Name="btnGestionContratos" Content="" Click="btnGestionContratos_Click"/>
+        </Grid>
+    </StackPanel>
+    
 </Window>

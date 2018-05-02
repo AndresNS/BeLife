@@ -26,12 +26,7 @@ namespace Aplicacion.Datos
         public string FechaNacimiento { get; set; }
         public int IdSexo { get; set; }
         public int IdEstadoCivil { get; set; }
-
-        public override string ToString()
-        {
-            return RutCliente;
-        }
-
+    
         public virtual EstadoCivil EstadoCivil { get; set; }
         public virtual Sexo Sexo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -29,10 +29,5 @@ namespace Aplicacion.Datos
     
         public virtual Cliente Cliente { get; set; }
         public virtual Plan Plan { get; set; }
-
-        public override string ToString()
-        {
-            return Numero;
-        }
     }
 }

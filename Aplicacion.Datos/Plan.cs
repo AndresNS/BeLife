@@ -24,13 +24,13 @@ namespace Aplicacion.Datos
         public string Nombre { get; set; }
         public double PrimaBase { get; set; }
         public string PolizaActual { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Contrato> Contratoes { get; set; }
 
         public override string ToString()
         {
             return Nombre;
         }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Contrato> Contratoes { get; set; }
     }
 }

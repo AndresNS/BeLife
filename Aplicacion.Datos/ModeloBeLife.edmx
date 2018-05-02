@@ -348,6 +348,18 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram DiagramId="51f545ba675d42afbf20bb28ef092627" Name="Diagram1">
+        <EntityTypeShape EntityType="BeLifeModel.Cliente" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLifeModel.Contrato" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLifeModel.EstadoCivil" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLifeModel.Plan" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeLifeModel.Sexo" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="BeLifeModel.Cliente_EstadoCivil_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLifeModel.Cliente_Sexo_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLifeModel.Contrato_Cliente_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="BeLifeModel.Contrato_Plan_FK1" ManuallyRouted="false" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>
