@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplicacion.Presentacion"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="GestionClientes" Height="450" Width="800">
 
     <Window.Resources>
@@ -18,139 +19,201 @@
     <TabControl>
         
         <!-- ############# REGISTRO DE CLIENTES ############# -->
-            <TabItem Header="Registro de Clientes" Name="tabRegistro">
+        <TabItem Header="Registro de Clientes" Name="tabRegistro">
 
-                <StackPanel Margin="50 30 50 0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <StackPanel Grid.Column="0" Margin="20 0">
-                            <!-- REGISTRO: Ingresar Rut -->
-                            <Label Name="lblIngresarRut" Content="Rut"/>
-                            <TextBox Name="txtIngresarRut" Text="" />
-                        </StackPanel>
-                        <StackPanel Grid.Column="1" Margin="20 0"> 
-                            <!-- REGISTRO: Ingresar Fecha Nacimiento -->
-                            <Label Name="lblIngresarFechaNacimiento" Content="Fecha de Nacimiento" />
-                            <DatePicker Name="dpIngresarFechaNacimiento"  />
-                        </StackPanel>
-                    </Grid>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <StackPanel Grid.Column="0" Margin="20 0">
-                            <!-- REGISTRO: Ingresar Nombres -->
-                            <Label Name="lblIngresarNombres" Content="Nombres"/>
-                            <TextBox Name="txtIngresarNombres" Text=""/>
-                        </StackPanel>
-                        <StackPanel Grid.Column="1" Margin="20 0">
-                            <!-- REGISTRO: Ingresar Apellidos -->
-                            <Label Name="lblIngresarApellidos" Content="Apellidos"/>
-                            <TextBox Name="txtIngresarApellidos" Text=""/>
-                        </StackPanel>
-                    </Grid>
-                    <Grid Margin="0 0 0 30">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <StackPanel Grid.Column="0" Margin="20 0">
-                            <!-- REGISTRO: Ingresar Sexo -->
-                            <Label Name="lblIngresarSexo" Content="Sexo"  />
-                            <ComboBox Name="cbxIngresarSexo" />
-                        </StackPanel>
-                        <StackPanel Grid.Column="1" Margin="20 0">
-                            <!-- REGISTRO: Ingresar Estado Civil -->
-                            <Label Name="lblIngresarEstadoCivil" Content="Estado Civil"  />
-                            <ComboBox Name="cbxIngresarEstadoCivil" />
-                        </StackPanel>
-                    </Grid>
-                    <Button Style="{StaticResource Agregar_}" HorizontalAlignment="Right" Name="btnIngresar" Content="" Margin="0 0 20 0"  Click="btnIngresar_Click"/>
-                </StackPanel>
-            </TabItem>
-
-            <!-- ############# LISTADO DE CLIENTES ############# -->
-            <TabItem Header="Listado de Clientes" Name="tabListado">
-            <StackPanel>
-                <Grid Margin="20">
+            <StackPanel Margin="50 30 50 0">
+                <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    
-                    <!-- LISTADO: Seleccionar Rut -->
-                    <StackPanel Grid.Column="0" Margin="0 0 10 0">
-                        <Label Content="Rut"/>
-                        <ComboBox  Name="cbxFilterRut" SelectionChanged="cbxFilterRut_SelectionChanged"/>
-                    </StackPanel>
 
-                    <!-- LISTADO: Seleccionar Sexo -->
-                    <StackPanel Grid.Column="1" Margin="0 0 10 0">
-                        <Label Content="Sexo"/>
-                        <ComboBox Name="cbxFilterSexo"  SelectionChanged="cbxFilterSexo_SelectionChanged"/>
+                    <StackPanel Grid.Column="0" Margin="20 0">
+                        <!-- REGISTRO: Ingresar Rut -->
+                        <Label Name="lblIngresarRut" Content="Rut"/>
+                        <TextBox Name="txtIngresarRut" Text="" />
                     </StackPanel>
-
-                    <!-- LISTADO: Seleccionar Estado Civil -->
-                    <StackPanel Grid.Column="2" Margin="0 0 10 0">
-                        <Label Content="Estado Civil"/>
-                        <ComboBox Name="cbxFilterCivil" SelectionChanged="cbxFilterCivil_SelectionChanged"/>
+                    <StackPanel Grid.Column="1" Margin="20 0"> 
+                        <!-- REGISTRO: Ingresar Fecha Nacimiento -->
+                        <Label Name="lblIngresarFechaNacimiento" Content="Fecha de Nacimiento" />
+                        <DatePicker Name="dpIngresarFechaNacimiento"  />
                     </StackPanel>
-
-                    <!-- LISTADO: Botones -->
-                    <Button Grid.Column="3" Style="{StaticResource DataSearche_}" Content="" Name="btnFilter" Click="btnFilter_Click"/>
-                    <Button Grid.Column="4" Name="BtnFilterReset" Content="Reset" Click="BtnFilterReset_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10 5"/>
                 </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <!-- LISTADO: Resultados -->
-                <DataGrid Name="dgListadoClientes" AutoGenerateColumns="False" Height="250" VerticalScrollBarVisibility="Auto" CanUserAddRows="False" Margin="20 0 20 0"/>
+                    <StackPanel Grid.Column="0" Margin="20 0">
+                        <!-- REGISTRO: Ingresar Nombres -->
+                        <Label Name="lblIngresarNombres" Content="Nombres"/>
+                        <TextBox Name="txtIngresarNombres" Text=""/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20 0">
+                        <!-- REGISTRO: Ingresar Apellidos -->
+                        <Label Name="lblIngresarApellidos" Content="Apellidos"/>
+                        <TextBox Name="txtIngresarApellidos" Text=""/>
+                    </StackPanel>
+                </Grid>
+                <Grid Margin="0 0 0 30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Margin="20 0">
+                        <!-- REGISTRO: Ingresar Sexo -->
+                        <Label Name="lblIngresarSexo" Content="Sexo"  />
+                        <ComboBox Name="cbxIngresarSexo" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20 0">
+                        <!-- REGISTRO: Ingresar Estado Civil -->
+                        <Label Name="lblIngresarEstadoCivil" Content="Estado Civil"  />
+                        <ComboBox Name="cbxIngresarEstadoCivil" />
+                    </StackPanel>
+                </Grid>
+                <Button Style="{StaticResource Agregar_}" HorizontalAlignment="Right" Name="btnIngresar" Content="" Margin="0 0 20 0"  Click="btnIngresar_Click"/>
             </StackPanel>
-                
-            
         </TabItem>
 
+        <!-- ############# LISTADO DE CLIENTES ############# -->
+        <TabItem Header="Listado de Clientes" Name="tabListado">
+        <StackPanel>
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                    
+                <!-- LISTADO: Seleccionar Rut -->
+                <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                    <Label Content="Rut"/>
+                    <ComboBox  Name="cbxFilterRut" SelectionChanged="cbxFilterRut_SelectionChanged"/>
+                </StackPanel>
+
+                <!-- LISTADO: Seleccionar Sexo -->
+                <StackPanel Grid.Column="1" Margin="0 0 10 0">
+                    <Label Content="Sexo"/>
+                    <ComboBox Name="cbxFilterSexo"  SelectionChanged="cbxFilterSexo_SelectionChanged"/>
+                </StackPanel>
+
+                <!-- LISTADO: Seleccionar Estado Civil -->
+                <StackPanel Grid.Column="2" Margin="0 0 10 0">
+                    <Label Content="Estado Civil"/>
+                    <ComboBox Name="cbxFilterCivil" SelectionChanged="cbxFilterCivil_SelectionChanged"/>
+                </StackPanel>
+
+                <!-- LISTADO: Botones -->
+                <Button Grid.Column="3" Style="{StaticResource DataSearche_}" Content="" Name="btnFilter" Click="btnFilter_Click"/>
+                <Button Grid.Column="4" Name="BtnFilterReset" Content="Reset" Click="BtnFilterReset_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10 5"/>
+            </Grid>
+
+            <!-- LISTADO: Resultados -->
+            <DataGrid Name="dgListadoClientes" AutoGenerateColumns="False" Height="250" VerticalScrollBarVisibility="Auto" CanUserAddRows="False" Margin="20 0 20 0"/>
+        </StackPanel>
+                
+            
+    </TabItem>
+
             <!-- ############# MODIFICAR CLIENTES ############# -->
-            <TabItem Header="Modificar Cliente" Name="tabModificar">
-                <Grid Background="#FFffffff">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="367*"/>
-                        <ColumnDefinition Width="19*"/>
-                        <ColumnDefinition Width="400*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button  Name="btnModificarIngRut" Content="Ingresar Rut" HorizontalAlignment="Left" Margin="224,15,0,0" VerticalAlignment="Top" Width="134" Click="btnModificarIngRut_Click"/>
-                    <Button Name="btnModificarSelRut" Content="Seleccionar Rut" HorizontalAlignment="Left" Margin="17,15,0,0" VerticalAlignment="Top" Width="134" Click="btnModificarSelRut_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-                    <ComboBox Name="cbxModificarRut" IsEnabled="False" HorizontalAlignment="Left" Margin="17,55,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="cbxModificarRut_SelectionChanged" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TabItem Header="Modificar Cliente" Name="tabModificar">
+            <StackPanel Margin="50 0">
+                <!-- Contenedor Criterio de busqueda -->
+                <GroupBox Header="Criterio de Búsqueda" Padding="3" Margin="100 5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <Grid Margin="0 0 0 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
-                    <Label Name="lblModificarRut" Content="Rut" HorizontalAlignment="Right" Margin="0,51,152,0" VerticalAlignment="Top"/>
-                    <Label Content="Rut" HorizontalAlignment="Right" Margin="0,94,120,0" VerticalAlignment="Top"/>
-                    <Label Name="lblModificarNombres" Content="Nombres" HorizontalAlignment="Right" Margin="0,126,120,0" VerticalAlignment="Top"/>
-                    <Label Name="lblModificarApellidos" Content="Apellidos" HorizontalAlignment="Right" Margin="0,158,120,0" VerticalAlignment="Top"/>
-                    <Label Name="lblModificarFechaNacimiento" Content="Fecha de Nacimiento" HorizontalAlignment="Right" Margin="0,190,120,0" VerticalAlignment="Top"/>
-                    <Label Name="lblModificarSexo" Content="Sexo" HorizontalAlignment="Right" Margin="0,222,120,0" VerticalAlignment="Top"/>
-                    <Label Name="lblModificarEstadoCivil" Content="Estado Civil" HorizontalAlignment="Right" Margin="0,254,120,0" VerticalAlignment="Top"/>
+                                <!-- Seleccionar criterio de Busqueda -->
+                                <RadioButton Name="rbModificarIngRut" Grid.Column="0" Content="Ingresar Rut" Checked="rbModificarBuscarRut_Checked"/>
+                                <RadioButton Name="rbModificarSelRut" Grid.Column="1" Content="Seleccionar Rut" Checked="rbModificarBuscarRut_Checked"/>
+                            </Grid>
 
-                    <TextBox Name="txtModificarRut" HorizontalAlignment="Left" Height="23" Margin="220,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145"/>
-                    <Label Name="lblModificarRutSeleccionado" Content="" HorizontalAlignment="Left" Margin="252,94,0,0" VerticalAlignment="Top" Width="113"/>
-                    <TextBox Name="txtModificarNombres" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="252,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145" Grid.ColumnSpan="3"/>
-                    <TextBox Name="txtModificarApellidos" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="252,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145" Grid.ColumnSpan="3"/>
-                    <DatePicker Name="dpModificarFechaNacimiento" IsEnabled="False" HorizontalAlignment="Left" Margin="252,191,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-                    <ComboBox Name="cbxModificarSexo" IsEnabled="False" HorizontalAlignment="Left" Margin="252,226,0,0" VerticalAlignment="Top" Width="145" Grid.ColumnSpan="3"/>
-                    <ComboBox Name="cbxModificarEstadoCivil" IsEnabled="False" HorizontalAlignment="Left" Margin="252,258,0,0" VerticalAlignment="Top" Width="145" Grid.ColumnSpan="3"/>
-                    <Button Style="{StaticResource ClientSearch_}" Name="btnBuscarCliente" Content="" HorizontalAlignment="Left" Margin="189,28,0,0" VerticalAlignment="Top" Click="btnBuscarCliente_Click" Grid.Column="2" />
-                    <Button Style="{StaticResource ClientUpdate_}" Name="btnModificarCliente" IsEnabled="False" Content="" HorizontalAlignment="Left" Margin="88,262,0,0" VerticalAlignment="Top" Click="btnModificarCliente_Click" Grid.Column="2"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <!-- Ingresar/Seleccionar rut -->
+                                <TextBox Grid.Column="0" Name="txtModificarRut" Text=""/>
+                                <ComboBox Grid.Column="0" Visibility="Hidden" Name="cbxModificarRut" SelectionChanged="cbxModificarRut_SelectionChanged" />
+                            </Grid>
+                        </StackPanel>
+                        <!-- Boton Buscar Rut-->
+                        <Button Grid.Column="1" Style="{StaticResource ClientSearch_}" Name="btnBuscarCliente" Content="" Click="btnBuscarCliente_Click"/>
+                    </Grid>
+                </GroupBox>
 
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                </Grid>
-            </TabItem>
+                        <!-- Rut Seleccionado -->
+                        <StackPanel Grid.Column="0" Margin="20 0">
+                            <Label Content="Rut"/>
+                            <Label Name="lblModificarRutSeleccionado" Content=""/>
+                        </StackPanel>
+                        <!-- Fecha de Nacimiento-->
+                        <StackPanel Grid.Column="1" Margin="20 0">
+                            <Label Name="lblModificarFechaNacimiento" Content="Fecha de Nacimiento"/>
+                            <DatePicker Name="dpModificarFechaNacimiento" IsEnabled="False"/>
+                        </StackPanel>
+
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Nombres -->
+                        <StackPanel Grid.Column="0" Margin="20 0">
+                            <Label Name="lblModificarNombres" Content="Nombres" />
+                            <TextBox Name="txtModificarNombres" IsEnabled="False" Text=""/>
+                        </StackPanel>
+                        <!-- Apellidos -->
+                        <StackPanel Grid.Column="1" Margin="20 0">
+                            <Label Name="lblModificarApellidos" Content="Apellidos" />
+                            <TextBox Name="txtModificarApellidos" IsEnabled="False"  Text="" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Sexo -->
+                        <StackPanel Grid.Column="0" Margin="20 0">
+                            <Label Name="lblModificarSexo" Content="Sexo" />
+                            <ComboBox Name="cbxModificarSexo" IsEnabled="False" />
+                        </StackPanel>
+                        <!-- Estado Civil-->
+                        <StackPanel Grid.Column="1" Margin="20 0">
+                            <Label Name="lblModificarEstadoCivil" Content="Estado Civil" />
+                            <ComboBox Name="cbxModificarEstadoCivil" IsEnabled="False" />
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Boton Modificar Cliente -->
+                <Button Style="{StaticResource ClientUpdate_}" Margin="20 10" HorizontalAlignment="Right" Name="btnModificarCliente" IsEnabled="False" Content="" Click="btnModificarCliente_Click" />
+            </StackPanel>
+        </TabItem>
 
             <!-- ############# ELIMINAR CLIENTE ############# -->
             <TabItem Header="Eliminar Cliente" Name="tabEliminar">

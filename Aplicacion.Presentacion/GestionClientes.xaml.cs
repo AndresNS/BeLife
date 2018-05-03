@@ -43,6 +43,28 @@ namespace Aplicacion.Presentacion
             cbxFilterRut.ItemsSource = conector.Clientes.ToList();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            rbModificarIngRut.IsChecked = true;
+            cbxModificarRut.Visibility = Visibility.Hidden;
+        }
+
+        private void rbModificarBuscarRut_Checked(object sender, RoutedEventArgs e)
+        {
+            if (rbModificarIngRut.IsChecked == true)
+            {
+                cbxModificarRut.Visibility = Visibility.Hidden;
+                txtModificarRut.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                cbxModificarRut.Visibility = Visibility.Visible;
+                cbxModificarRut.SelectedIndex = 0;
+                txtModificarRut.Visibility = Visibility.Hidden;
+
+            }
+        }
+
         private void ActualizarListado()
         {
             dgListadoClientes.ItemsSource = null;
@@ -119,6 +141,7 @@ namespace Aplicacion.Presentacion
         {
             try
             {
+
                 String rut = txtModificarRut.Text;
                 int contador = conector.Clientes.Count(cli => cli.RutCliente == rut);
                 if(contador == 0)
@@ -151,6 +174,7 @@ namespace Aplicacion.Presentacion
                     dpModificarFechaNacimiento.SelectedDate = DateTime.Parse(c.FechaNacimiento);
                     cbxModificarSexo.SelectedIndex = c.IdSexo-1;
                     cbxModificarEstadoCivil.SelectedIndex = c.IdEstadoCivil-1;
+
                 }
             } catch (Exception ex)
             {
@@ -299,33 +323,6 @@ namespace Aplicacion.Presentacion
             ActualizarListado();
         }
 
-        private void btnModificarIngRut_Click(object sender, RoutedEventArgs e)
-        {
-            txtModificarRut.IsEnabled = true;
-            cbxModificarRut.IsEnabled = false;
-
-            cbxModificarRut.SelectedIndex = -1;
-
-            txtModificarNombres.IsEnabled = true;
-            txtModificarApellidos.IsEnabled = true;
-            dpModificarFechaNacimiento.IsEnabled = true;
-            cbxModificarEstadoCivil.IsEnabled = true;
-            cbxModificarSexo.IsEnabled = true;
-        }
-
-        private void btnModificarSelRut_Click(object sender, RoutedEventArgs e)
-        {
-            txtModificarRut.IsEnabled = false;
-            cbxModificarRut.IsEnabled = true;
-
-            txtModificarRut.Text = "";
-
-            txtModificarNombres.IsEnabled = true;
-            txtModificarApellidos.IsEnabled = true;
-            dpModificarFechaNacimiento.IsEnabled = true;
-            cbxModificarEstadoCivil.IsEnabled = true;
-            cbxModificarSexo.IsEnabled = true;
-        }
 
         private void cbxModificarRut_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -363,5 +360,7 @@ namespace Aplicacion.Presentacion
                 txtEliminarRut.Text = rut;
             }
         }
+
+
     }
 }
