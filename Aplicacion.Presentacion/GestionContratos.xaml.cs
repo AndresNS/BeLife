@@ -311,37 +311,6 @@ namespace Aplicacion.Presentacion
             ActualizarListadoContratos();
         }
 
-        private void btnRegdContratoIngRut_Click(object sender, RoutedEventArgs e)
-        {
-            txtRegContratoRut.IsEnabled = true;
-            cbxRegContratoRut.IsEnabled = false;
-
-            cbxRegContratoRut.SelectedIndex = -1;
-
-            cbxRegContratoPlan.IsEnabled = true;
-            dpRegContratoInicioVigencia.IsEnabled = true;
-            rbRegContratoSaludSi.IsEnabled = true;
-            rbRegContratoSaludNo.IsEnabled = true;
-            txtRegContratoObservaciones.IsEnabled = true;
-            btnRegContratoRegistrar.IsEnabled = true;
-
-        }
-
-        private void btnRegContratoSelRut_Click(object sender, RoutedEventArgs e)
-        {
-            cbxRegContratoRut.IsEnabled = true;
-            txtRegContratoRut.IsEnabled = false;
-
-            txtRegContratoRut.Text = "";
-
-            cbxRegContratoPlan.IsEnabled = true;
-            dpRegContratoInicioVigencia.IsEnabled = true;
-            rbRegContratoSaludSi.IsEnabled = true;
-            rbRegContratoSaludNo.IsEnabled = true;
-            txtRegContratoObservaciones.IsEnabled = true;
-            btnRegContratoRegistrar.IsEnabled = true;
-        }
-
         private void cbxRegContratoRut_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(cbxRegContratoRut.SelectedIndex != -1)
@@ -533,6 +502,11 @@ namespace Aplicacion.Presentacion
             cbxFilterNC.SelectedIndex = -1;
             cbxFilterNP.SelectedIndex = -1;
             ActualizarListadoContratos();
+        }
+
+        private void btnRegBuscarCliente_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

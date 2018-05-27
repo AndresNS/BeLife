@@ -123,7 +123,7 @@
         <TabItem Header="Modificar Cliente" Name="tabModificar">
             <StackPanel Margin="50 0">
                 <!-- Contenedor Criterio de busqueda -->
-                <GroupBox Header="Criterio de Búsqueda" Padding="3" Margin="0 5">
+                <GroupBox Header="Criterio de Búsqueda" Padding="10 3" Margin="0 5">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="3*"/>
