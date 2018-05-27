@@ -51,14 +51,6 @@ namespace Aplicacion.Presentacion
 #line hidden
 
 
-#line 23 "..\..\GestionContratos.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lblRegContratoRutCliente;
-
-#line default
-#line hidden
-
-
 #line 24 "..\..\GestionContratos.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblRegContratoInicioVigencia;
@@ -86,14 +78,6 @@ namespace Aplicacion.Presentacion
 #line 27 "..\..\GestionContratos.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblRegContratoCodigoPlan;
-
-#line default
-#line hidden
-
-
-#line 28 "..\..\GestionContratos.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox txtRegContratoRut;
 
 #line default
 #line hidden
@@ -142,14 +126,6 @@ namespace Aplicacion.Presentacion
 #line 34 "..\..\GestionContratos.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cbxRegContratoPlan;
-
-#line default
-#line hidden
-
-
-#line 35 "..\..\GestionContratos.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ComboBox cbxRegContratoRut;
 
 #line default
 #line hidden
@@ -778,6 +754,8 @@ namespace Aplicacion.Presentacion
         internal System.Windows.Controls.RadioButton rbRegistroSelRut;
         internal System.Windows.Controls.TextBox txtRegistroRut;
         internal System.Windows.Controls.ComboBox cbxRegistroRut;
+        internal System.Windows.Controls.Label lblRegContratoRutCliente;
+        internal System.Windows.Controls.Label lblRegContratoRut;
     }
 }
 
