@@ -36,10 +36,14 @@ namespace Aplicacion.Presentacion
 
             cbxFilterConRut.ItemsSource = conector.Clientes.ToList();
             cbxFilterNC.ItemsSource = conector.Contratoes.ToList();
-
-            //este tiene que dar los numeros
             cbxFilterNP.ItemsSource = conector.Plans.ToList();
 
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            rbRegistroIngRut.IsChecked = true;
+            cbxRegContratoRut.Visibility = Visibility.Hidden;
         }
 
         private void ActualizarListadoContratos()
@@ -506,7 +510,65 @@ namespace Aplicacion.Presentacion
 
         private void btnRegBuscarCliente_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
 
+                String rut = txtRegContratoRut.Text;
+                int contador = conector.Clientes.Count(cli => cli.RutCliente == rut);
+                if (contador == 0)
+                {
+                    MessageBox.Show("No hay clientes con ese Rut.");
+
+                    cbxRegContratoPlan.SelectedIndex = -1;
+                    dpRegContratoInicioVigencia.SelectedDate = null;
+                    rbRegContratoSaludSi.IsChecked = false;
+                    rbRegContratoSaludNo.IsChecked = false;
+                    txtRegContratoObservaciones.Text = string.Empty;
+
+                    cbxRegContratoPlan.IsEnabled = false;
+                    dpRegContratoInicioVigencia.IsEnabled = false;
+                    rbRegContratoSaludSi.IsEnabled = false;
+                    rbRegContratoSaludNo.IsEnabled = false;
+                    txtRegContratoObservaciones.IsEnabled = false;
+                    btnRegContratoRegistrar.IsEnabled = false;
+                }
+                else
+                {
+                    Cliente c = conector.Clientes.First(cli => cli.RutCliente == rut);
+                    cbxRegContratoPlan.IsEnabled = true;
+                    dpRegContratoInicioVigencia.IsEnabled = true;
+                    rbRegContratoSaludSi.IsEnabled = true;
+                    rbRegContratoSaludNo.IsEnabled = true;
+                    txtRegContratoObservaciones.IsEnabled = true;
+                    btnRegContratoRegistrar.IsEnabled = true;
+
+                    txtRegContratoRut.Text = c.RutCliente;
+                    //lblRegContratoRut.Content = c.RutCliente;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                tabRegistroContrato.Focus();
+            }
+        }
+
+        private void rbRegistroBuscarRut_Checked(object sender, RoutedEventArgs e)
+        {
+            if (rbRegistroIngRut.IsChecked == true)
+            {
+                cbxRegContratoRut.Visibility = Visibility.Hidden;
+                txtRegContratoRut.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                cbxRegContratoRut.Visibility = Visibility.Visible;
+                cbxRegContratoRut.SelectedIndex = 0;
+                txtRegContratoRut.Visibility = Visibility.Hidden;
+
+            }
         }
     }
 }

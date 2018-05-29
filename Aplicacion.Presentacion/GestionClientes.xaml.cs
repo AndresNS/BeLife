@@ -67,7 +67,17 @@ namespace Aplicacion.Presentacion
         private void ActualizarListado()
         {
             dgListadoClientes.ItemsSource = null;
+            cbxModificarRut.ItemsSource = null;
+            cbxFilterSexo.ItemsSource = null;
+            cbxFilterCivil.ItemsSource = null;
+            cbxFilterRut.ItemsSource = null;
+
             dgListadoClientes.ItemsSource = conector.Clientes.ToList();
+            cbxModificarRut.ItemsSource = conector.Clientes.ToList();
+            cbxFilterSexo.ItemsSource = conector.Sexoes.ToList();
+            cbxFilterCivil.ItemsSource = conector.EstadoCivils.ToList();
+            cbxFilterRut.ItemsSource = conector.Clientes.ToList();
+        
         }
 
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
