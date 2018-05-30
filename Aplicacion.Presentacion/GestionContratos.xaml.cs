@@ -43,6 +43,7 @@ namespace Aplicacion.Presentacion
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             rbRegistroIngRut.IsChecked = true;
+            rbModContratoIngNum.IsChecked = true;
             cbxRegContratoRut.Visibility = Visibility.Hidden;
         }
 
@@ -176,41 +177,10 @@ namespace Aplicacion.Presentacion
             }
         }
 
-        private void btnModContratoIngNumero_Click(object sender, RoutedEventArgs e)
-        {
-            txtModContratoNumero.IsEnabled = true;
-            cbxModContratoNumero.IsEnabled = false;
-            btnModContratoBuscar.IsEnabled = true;
-
-            cbxModContratoNumero.SelectedIndex = -1;
-        }
-
-        private void btnModContratoSelNumero_Click(object sender, RoutedEventArgs e)
-        {
-            cbxModContratoNumero.IsEnabled = true;
-            txtModContratoNumero.IsEnabled = false;
-            btnModContratoBuscar.IsEnabled = true;
-
-            txtModContratoNumero.Text = "";
-
-        }
-
         private void btnModContratoBuscar_Click(object sender, RoutedEventArgs e)
         {
-            string num = "";
-
-            if(txtModContratoNumero.IsEnabled == true)
-            {
-                num = txtModContratoNumero.Text;
-                txtModContratoNumero.IsEnabled = false;
-                cbxModContratoNumero.SelectedIndex = -1;
-            }
-            else
-            {
-                num = cbxModContratoNumero.SelectedValue.ToString();
-                cbxModContratoNumero.IsEnabled = false;
-                txtModContratoNumero.Text = num;
-            }
+            
+            string num = txtModContratoNumero.Text;
 
             int cantContratos = conector.Contratoes.Count(con => con.Numero == num);
             if (cantContratos > 0)
@@ -218,7 +188,6 @@ namespace Aplicacion.Presentacion
                 Contrato c = conector.Contratoes.First(con => con.Numero == num);
                 txtModContratoNumero.Text = c.Numero;
 
-                txtModContratoRut.Text = c.RutCliente;
                 lblModContratoFechaCreacion.Content = c.FechaCreacion;
                 lblModContratoFechaTermino.Content = c.FechaTermino;
                 lblModContratoInicioVigencia.Content = c.FechaInicioVigencia;
@@ -323,6 +292,16 @@ namespace Aplicacion.Presentacion
                 txtRegContratoRut.Text = rut;
             }
             
+        }
+
+        private void cbxModContratoNumero_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbxModContratoNumero.SelectedIndex != -1)
+            {
+                string num = cbxModContratoNumero.SelectedValue.ToString();
+                txtModContratoNumero.Text = num;
+            }
+
         }
 
         private void cbxRegContratoPlan_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -474,7 +453,6 @@ namespace Aplicacion.Presentacion
         }
 
         //filtros
-        //filtros
         private void btnFilterContract_Click(object sender, RoutedEventArgs e)
         {
             if (cbxFilterConRut.SelectedValue != null)
@@ -543,9 +521,6 @@ namespace Aplicacion.Presentacion
                     btnRegContratoRegistrar.IsEnabled = true;
 
                     txtRegContratoRut.Text = c.RutCliente;
-                    //lblRegContratoRut.Content = c.RutCliente;
-
-
                 }
             }
             catch (Exception ex)
@@ -567,6 +542,22 @@ namespace Aplicacion.Presentacion
                 cbxRegContratoRut.Visibility = Visibility.Visible;
                 cbxRegContratoRut.SelectedIndex = 0;
                 txtRegContratoRut.Visibility = Visibility.Hidden;
+
+            }
+        }
+
+        private void rbModContratoBuscarNum_Checked(object sender, RoutedEventArgs e)
+        {
+            if (rbModContratoIngNum.IsChecked == true)
+            {
+                cbxModContratoNumero.Visibility = Visibility.Hidden;
+                txtModContratoNumero.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                cbxModContratoNumero.Visibility = Visibility.Visible;
+                cbxModContratoNumero.SelectedIndex = 0;
+                txtModContratoNumero.Visibility = Visibility.Hidden;
 
             }
         }
