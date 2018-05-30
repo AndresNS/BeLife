@@ -35,7 +35,6 @@ namespace Aplicacion.Presentacion
             cbxModificarSexo.ItemsSource = conector.Sexoes.ToList();
             cbxModificarEstadoCivil.ItemsSource = conector.EstadoCivils.ToList();
             cbxModificarRut.ItemsSource = conector.Clientes.ToList();
-            cbxEliminarRut.ItemsSource = conector.Clientes.ToList();
 
             //filtros
             cbxFilterSexo.ItemsSource = conector.Sexoes.ToList();
@@ -68,7 +67,17 @@ namespace Aplicacion.Presentacion
         private void ActualizarListado()
         {
             dgListadoClientes.ItemsSource = null;
+            cbxModificarRut.ItemsSource = null;
+            cbxFilterSexo.ItemsSource = null;
+            cbxFilterCivil.ItemsSource = null;
+            cbxFilterRut.ItemsSource = null;
+
             dgListadoClientes.ItemsSource = conector.Clientes.ToList();
+            cbxModificarRut.ItemsSource = conector.Clientes.ToList();
+            cbxFilterSexo.ItemsSource = conector.Sexoes.ToList();
+            cbxFilterCivil.ItemsSource = conector.EstadoCivils.ToList();
+            cbxFilterRut.ItemsSource = conector.Clientes.ToList();
+        
         }
 
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
@@ -220,7 +229,7 @@ namespace Aplicacion.Presentacion
             try
             {
 
-                string rut = txtEliminarRut.Text;
+                string rut = txtModificarRut.Text;
                 Cliente client = conector.Clientes.First(cli => cli.RutCliente == rut);
                 int contratos = conector.Contratoes.Count(con => con.RutCliente == rut);
 
@@ -233,7 +242,7 @@ namespace Aplicacion.Presentacion
                     conector.SaveChanges();
 
                     MessageBox.Show("El cliente ha sido eliminado");
-                    txtEliminarRut.Text = string.Empty;
+                    txtModificarRut.Text = string.Empty;
                     ActualizarListado();
 
                 }
@@ -297,7 +306,6 @@ namespace Aplicacion.Presentacion
             }
             else if (cbxFilterCivil.SelectedValue != null)
             {
-
                 EstadoCivil estcivil = (EstadoCivil)cbxFilterCivil.SelectedValue;
                 List<Cliente> lstCliente = conector.Clientes.Where(cli => cli.IdEstadoCivil == estcivil.IdEstadoCivil).ToList();
                 dgListadoClientes.ItemsSource = null;
@@ -323,7 +331,6 @@ namespace Aplicacion.Presentacion
             ActualizarListado();
         }
 
-
         private void cbxModificarRut_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cbxModificarRut.SelectedIndex != -1)
@@ -332,35 +339,5 @@ namespace Aplicacion.Presentacion
                 txtModificarRut.Text = rut;
             }
         }
-
-        private void btnEliminarSelRut_Click(object sender, RoutedEventArgs e)
-        {
-            txtEliminarRut.IsEnabled = false;
-            cbxEliminarRut.IsEnabled = true;
-
-            txtEliminarRut.Text = "";
-
-        }
-
-        private void btnEliminarIngRut_Click(object sender, RoutedEventArgs e)
-        {
-            txtEliminarRut.IsEnabled = true;
-            cbxEliminarRut.IsEnabled = false;
-
-            cbxEliminarRut.SelectedIndex = -1;
-
-
-        }
-
-        private void cbxEliminarRut_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cbxEliminarRut.SelectedIndex != -1)
-            {
-                string rut = cbxEliminarRut.SelectedValue.ToString();
-                txtEliminarRut.Text = rut;
-            }
-        }
-
-
     }
 }

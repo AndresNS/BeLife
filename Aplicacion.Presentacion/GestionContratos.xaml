@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplicacion.Presentacion"
         mc:Ignorable="d"
-        Title="GestionContratos" Height="450" Width="800">
+        Loaded="Window_Loaded"
+        Title="GestionContratos" Height="550" Width="800">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -13,90 +14,337 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="792">
-            <TabItem Header="Regitro Contrato" Name="tabRegistroContrato">
-                <Grid Background="#FFf">
-                    <Button  Name="btnRegContratoIngRut" Content="Ingresar Rut" HorizontalAlignment="Left" Margin="204,10,0,0" VerticalAlignment="Top" Width="134" Click="btnRegdContratoIngRut_Click"/>
-                    <Button Name="btnRegContratoSelRut" Content="Seleccionar Rut" HorizontalAlignment="Left" Margin="364,10,0,0" VerticalAlignment="Top" Width="134" Click="btnRegContratoSelRut_Click"/>
 
-                    <Label Name="lblRegContratoRutCliente" Content="Rut Cliente" HorizontalAlignment="Right" Margin="0,42,557,0" VerticalAlignment="Top"/>
-                    <Label Name="lblRegContratoInicioVigencia" Content="Inicio Vigencia" HorizontalAlignment="Right" Margin="0,106,557,0" VerticalAlignment="Top"/>
-                    <Label Name="lblRegContratoSalud" Content="Salud" HorizontalAlignment="Right" Margin="0,134,557,0" VerticalAlignment="Top"/>
-                    <Label Name="lblRegContratoObservaciones" Content="Observaciones" HorizontalAlignment="Right" Margin="0,165,557,0" VerticalAlignment="Top"/>
-                    <Label Name="lblRegContratoCodigoPlan" Content="Código Plan" HorizontalAlignment="Right" Margin="0,74,557,0" VerticalAlignment="Top"/>
-                    <TextBox Name="txtRegContratoRut" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="234,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="169"/>
-                    <DatePicker Name="dpRegContratoInicioVigencia" IsEnabled="False" HorizontalAlignment="Left" Margin="234,108,0,0" VerticalAlignment="Top" Width="169"/>
-                    <RadioButton Name="rbRegContratoSaludSi" IsEnabled="False" Content="Sí" HorizontalAlignment="Left" Margin="234,142,0,0" VerticalAlignment="Top"/>
-                    <RadioButton Name="rbRegContratoSaludNo" IsEnabled="False" Content="No" HorizontalAlignment="Left" Margin="299,142,0,0" VerticalAlignment="Top"/>
-                    <TextBox Name="txtRegContratoObservaciones" IsEnabled="False" HorizontalAlignment="Left" Height="86" Margin="234,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="290"/>
-                    <Button Style="{StaticResource ContractAdd_}"  Name="btnRegContratoRegistrar" IsEnabled="False" Content="Registrar Contrato" HorizontalAlignment="Left" Margin="563,200,0,0" VerticalAlignment="Top" Click="btnRegContratoRegistrar_Click"/>
-                    <ComboBox Name="cbxRegContratoPlan" IsEnabled="False" HorizontalAlignment="Left" Margin="234,78,0,0" VerticalAlignment="Top" Width="169" SelectionChanged="cbxRegContratoPlan_SelectionChanged" />
-                    <ComboBox Name="cbxRegContratoRut" IsEnabled="False" HorizontalAlignment="Left" Margin="420,47,0,0" VerticalAlignment="Top" Width="174" SelectionChanged="cbxRegContratoRut_SelectionChanged"/>
-                    <Label Content="Poliza del Plan:" HorizontalAlignment="Left" Margin="420,78,0,0" VerticalAlignment="Top"/>
-                    <Label Name="lblRegContratoPoliza" Content="" HorizontalAlignment="Left" Margin="514,78,0,0" VerticalAlignment="Top" Width="129"/>
-                    <Label Content="Prima Anual: " HorizontalAlignment="Left" Margin="420,107,0,0" VerticalAlignment="Top"/>
-                    <Label Name="lblRegContratoPrimaMensual" Content="" HorizontalAlignment="Left" Margin="674,108,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Label Name="lblRegContratoPrimaAnual" Content="" HorizontalAlignment="Left" Margin="500,107,0,0" VerticalAlignment="Top" Width="70"/>
-                    <Label Content="Prima Mensual: " HorizontalAlignment="Left" Margin="580,107,0,0" VerticalAlignment="Top"/>
 
-                </Grid>
-            </TabItem>
-            <TabItem Header="Listar Contratos" Name="tabListarContratos">
-                <Grid Background="#FFf">
+    <TabControl>
+        <!-- ############# REGISTRO DE CONTRATOS ############# -->
+        <TabItem Header="Registro Contrato" Name="tabRegistroContrato">
+            <StackPanel Margin="50 0">
+                <!-- Buscador de Cliente -->
+                <GroupBox Header="Criterio de Búsqueda" Padding="10 3" Margin="100 5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <Grid Margin="0 0 0 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Seleccionar criterio de Busqueda -->
+                                <RadioButton Name="rbRegistroIngRut" Grid.Column="0" Content="Ingresar Rut" Checked="rbRegistroBuscarRut_Checked"/>
+                                <RadioButton Name="rbRegistroSelRut" Grid.Column="1" Content="Seleccionar Rut" Checked="rbRegistroBuscarRut_Checked"/>
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <!-- Ingresar/Seleccionar rut -->
+                                <TextBox Grid.Column="0" Name="txtRegContratoRut" Text=""/>
+                                <ComboBox Grid.Column="0" Visibility="Hidden" Name="cbxRegContratoRut" SelectionChanged="cbxRegContratoRut_SelectionChanged" />
+                            </Grid>
+                        </StackPanel>
+                        <!-- Boton Buscar Contrato -->
+                        <Button Grid.Column="1" Style="{StaticResource ClientSearch_}" Name="btnRegBuscarCliente" Content=""  Click="btnRegBuscarCliente_Click"/>
+
+                    </Grid>
+                </GroupBox>
+
+                <!-- Datos del Contrato-->
+                <StackPanel>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Codigo Plan -->
+                        <StackPanel Grid.Column="0" Margin="20 0">
+                            <Label Name="lblRegContratoCodigoPlan" Content="Código Plan"/>
+                            <ComboBox Name="cbxRegContratoPlan" IsEnabled="False" SelectionChanged="cbxRegContratoPlan_SelectionChanged" />
+                        </StackPanel>
+
+                        <!-- Poliza Plan -->
+                        <StackPanel Grid.Column="1" Margin="20 0">
+                            <Label Content="Poliza del Plan"/>
+                            <Label Name="lblRegContratoPoliza" Content=""/>
+                        </StackPanel>
+                    </Grid>
+
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Inicio Vigencia -->
+                        <StackPanel Grid.Column="0" Margin="20 0">
+                            <Label Name="lblRegContratoInicioVigencia" Content="Inicio Vigencia"/>
+                            <DatePicker Name="dpRegContratoInicioVigencia" IsEnabled="False"/>
+                        </StackPanel>
+
+                        <!-- Primas -->
+                        <Grid Grid.Column="1" Margin="20 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <Label Content="Prima Anual: " />
+                                <Label Name="lblRegContratoPrimaAnual" Content=""/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <Label Content="Prima Mensual: "/>
+                                <Label Name="lblRegContratoPrimaMensual" Content=""/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Observaciones -->
+                        <StackPanel Grid.Column="0"  Margin="20 0">
+                            <Label Name="lblRegContratoObservaciones" Content="Observaciones" />
+                            <TextBox Name="txtRegContratoObservaciones" IsEnabled="False" Height="100" Text="" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Margin="20 0">
+
+                            <Label Name="lblRegContratoSalud" Content="Salud"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Salud -->
+                                <RadioButton Grid.Column="0" Name="rbRegContratoSaludSi" IsEnabled="False" Content="Sí" />
+                                <RadioButton Grid.Column="1" Name="rbRegContratoSaludNo" IsEnabled="False" Content="No" />
+                            </Grid>
+
+                            <!-- Boton Agregar contrato-->
+                            <Button Style="{StaticResource ContractAdd_}" HorizontalAlignment="Center" Margin="0 30 0 0" Name="btnRegContratoRegistrar" IsEnabled="False" Content="" Click="btnRegContratoRegistrar_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </TabItem>
+
+        <!-- ############# LISTAR CONTRATOS ############# -->
+        <TabItem Header="Listar Contratos" Name="tabListarContratos">
+            <StackPanel>
+
+                <!-- Filtros -->
+                <Grid Margin="20">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25*"/>
-                        <ColumnDefinition Width="106*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid Name="dgListadoContratos" HorizontalAlignment="Left" Height="320" Margin="10,61,0,0" VerticalAlignment="Top" Width="766" Grid.ColumnSpan="2"/>
-                    <ComboBox Name="cbxFilterNC" HorizontalAlignment="Left" Margin="75,20,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <ComboBox Name="cbxFilterNP" HorizontalAlignment="Left" Margin="224,20,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <ComboBox Name="cbxFilterConRut" HorizontalAlignment="Left" Margin="375,20,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <Button Style="{StaticResource DataSearche_}" Content="" Name="btnFilterContract" Grid.Column="1" HorizontalAlignment="Left" Margin="517,6,0,0" VerticalAlignment="Top" Click="btnFilterContract_Click"/>
-                    <Button Content="Reset" Name="btnFilterReset" HorizontalAlignment="Left" Margin="124,20,0,0" VerticalAlignment="Top" Width="71" Grid.ColumnSpan="2" Click="btnFilterReset_Click"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Modificar Contrato" Name="tabModificarContrato">
-                <Grid Background="#FFf">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="36*"/>
-                        <RowDefinition Height="355*"/>
-                    </Grid.RowDefinitions>
-                    <Label Name="lblModContratoFCreacion" Content="Fecha Creación" HorizontalAlignment="Right" Margin="0,82,607,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Name="lblModContratosFTermino" Content="Fecha Término" HorizontalAlignment="Right" Margin="0,82,317,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Name="lblModContratoRutCliente" Content="Rut Cliente" HorizontalAlignment="Right" Margin="0,46,607,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Name="lblModContratoInicioVig" Content="Inicio Vigencia" HorizontalAlignment="Right" Margin="0,110,607,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Name="lblModContratoFinVig" Content="Fin Vigencia" HorizontalAlignment="Right" Margin="0,110,317,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Name="lblModContratoVigencia" Content="Vigente" HorizontalAlignment="Right" Margin="0,110,117,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Name="lblModContratoSalud" Content="Salud" HorizontalAlignment="Right" Margin="0,148,317,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Name="lblModContratoPAnual" Content="Prima Anual" HorizontalAlignment="Right" Margin="0,178,607,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Name="lblModContratoPrimaAnual" Content="" HorizontalAlignment="Right" Margin="0,178,433,0" VerticalAlignment="Top" Width="169" Grid.Row="1"/>
-                    <Label Name="lblModContratoPMensual" Content="Prima Mensual" HorizontalAlignment="Right" Margin="0,178,317,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Name="lblModContratoPrimaMensual" Content="" HorizontalAlignment="Right" Margin="0,178,180,0" VerticalAlignment="Top" Width="132" Grid.Row="1"/>
-                    <Label Name="lblModContratoObservaciones" Content="Observaciones" HorizontalAlignment="Right" Margin="0,216,606,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Label Name="lblModContratoCodigoPlan" Content="Código Plan" HorizontalAlignment="Right" Margin="0,148,607,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <TextBox Name="txtModContratoRut" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="184,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="169" Grid.Row="1"/>
-                    <RadioButton Name="rbModContratoSaludSi" IsEnabled="False" Content="Sí" HorizontalAlignment="Left" Margin="474,156,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <RadioButton Name="rbModContratoSaludNo" IsEnabled="False" Content="No" HorizontalAlignment="Left" Margin="539,156,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <TextBox Name="txtModContratoObservaciones" IsEnabled="False" HorizontalAlignment="Left" Height="113" Margin="186,222,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="321" Grid.Row="1"/>
-                    <Button Style="{StaticResource ContractUpdate_}" Name="btnModContratoGuardar" IsEnabled="False" Content="" HorizontalAlignment="Left" Margin="548,223,0,0" VerticalAlignment="Top" Click="btnModContratoGuardar_Click" Grid.Row="1"/>
-                    <ComboBox Name="cbxModContratoPlan" IsEnabled="False" HorizontalAlignment="Left" Margin="184,152,0,0" VerticalAlignment="Top" Width="169" Grid.Row="1"/>
-                    <Label Name="lblModContratoNumero" Content="Numero" HorizontalAlignment="Left" Margin="125,4,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <TextBox Name="txtModContratoNumero" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="184,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="169" Grid.Row="1"/>
-                    <ComboBox Name="cbxModContratoNumero" IsEnabled="False" HorizontalAlignment="Left" Margin="364,9,0,0" VerticalAlignment="Top" Width="171" Height="22" Grid.Row="1"/>
-                    <Label Name="lblModContratoFechaCreacion" Content="" HorizontalAlignment="Left" Margin="184,82,0,0" VerticalAlignment="Top" Width="169" Grid.Row="1"/>
-                    <Label Name="lblModContratoFechaTermino" Content="" HorizontalAlignment="Left" Margin="474,82,0,0" VerticalAlignment="Top" Width="132" Grid.Row="1"/>
-                    <Label Name="lblModContratoInicioVigencia" Content="" HorizontalAlignment="Left" Margin="184,112,0,0" VerticalAlignment="Top" Width="169" Grid.Row="1"/>
-                    <Label Name="lblModContratoFinVigencia" Content="" HorizontalAlignment="Left" Margin="474,112,0,0" VerticalAlignment="Top" Width="132" Grid.Row="1"/>
-                    <Button Style="{StaticResource ContractSearch_}" Name="btnModContratoBuscar" IsEnabled="False" Content="" HorizontalAlignment="Left" Margin="554,1,0,0" VerticalAlignment="Top"  Grid.Row="1" Click="btnModContratoBuscar_Click"/>
-                    <CheckBox Name="chbxModContratoVigente" IsEnabled="False" Content="Si" HorizontalAlignment="Left" Margin="674,116,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-                    <Button Style="{StaticResource ContractDelete_}" Name="btnModContratoTerminar" IsEnabled="False"  HorizontalAlignment="Left" Margin="548,285,0,0" VerticalAlignment="Top" Grid.Row="1" Click="btnModContratoTerminar_Click"/>
-                    <Button Name="btnModContratoIngNumero" Content="Ingresar Numero" HorizontalAlignment="Left" Margin="204,10,0,0" VerticalAlignment="Top" Width="134" Click="btnModContratoIngNumero_Click"/>
-                    <Button Name="btnModContratoSelNumero" Content="Seleccionar Numero" HorizontalAlignment="Left" Margin="364,10,0,0" VerticalAlignment="Top" Width="134" Click="btnModContratoSelNumero_Click"/>
+
+                    <!-- Numero de contrato -->
+                    <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                        <Label Content="Nro Contrato"/>
+                        <ComboBox Name="cbxFilterNC"/>
+                    </StackPanel>
+
+                    <!-- Plan -->
+                    <StackPanel Grid.Column="1" Margin="0 0 10 0">
+                        <Label Content="Plan"/>
+                        <ComboBox Name="cbxFilterNP"/>
+                    </StackPanel>
+
+                    <!-- Rut Cliente -->
+                    <StackPanel Grid.Column="2" Margin="0 0 10 0">
+                        <Label Content="Rut"/>
+                        <ComboBox Name="cbxFilterConRut"/>
+                    </StackPanel>
+
+                    <!-- Boton Filtrar -->
+                    <Button Style="{StaticResource DataSearche_}" Grid.Column="3" Content="" Name="btnFilterContract" Click="btnFilterContract_Click"/>
+
+                    <!-- Boton Reset -->
+                    <Button Content="Reset" Grid.Column="4" Name="btnFilterReset" Click="btnFilterReset_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10 5"/>
 
                 </Grid>
-            </TabItem>
-        </TabControl>
 
-    </Grid>
+                <!-- Resultados -->
+                <DataGrid Name="dgListadoContratos" AutoGenerateColumns="False" Height="250" VerticalScrollBarVisibility="Auto" CanUserAddRows="False" Margin="20 0 20 0" />
+            </StackPanel>
+        </TabItem>
+
+        <!-- ############# MODIFICAR CONTRATOS ############# -->
+        <TabItem Header="Modificar Contrato" Name="tabModificarContrato">
+            <StackPanel  Margin="50 0">
+
+                <GroupBox Header="Criterio de Búsqueda" Padding="10 3" Margin="100 5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Seleccionar criterio de Busqueda -->
+                                <RadioButton Name="rbModContratoIngNum" Grid.Column="0" Content="Ingresar Contrato" Checked="rbModContratoBuscarNum_Checked"/>
+                                <RadioButton Name="rbModContratoSelNum" Grid.Column="1" Content="Seleccionar Contrato" Checked="rbModContratoBuscarNum_Checked"/>
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Ingresar/Seleccionar Contrato -->
+                                <TextBox Grid.Column="0" Name="txtModContratoNumero" Text=""/>
+                                <ComboBox Grid.Column="0" Visibility="Hidden" Name="cbxModContratoNumero" SelectionChanged="cbxModContratoNumero_SelectionChanged" />
+                            </Grid>
+                        </StackPanel>
+                        
+                        <!-- Boton Buscar Contrato -->
+                        <Button Style="{StaticResource ContractSearch_}" Grid.Column="1" Name="btnModContratoBuscar" Content="" Click="btnModContratoBuscar_Click"/>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Datos del Contrato-->
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Fecha Creacion Contrato -->
+                        <StackPanel Grid.Column="0" Margin="20 0">
+                            <Label Name="lblModContratoFCreacion" Content="Fecha Creación" />
+                            <Label Name="lblModContratoFechaCreacion" Content="" />
+                        </StackPanel>
+
+                        <!-- Fecha Termino Contrato -->
+                        <StackPanel Grid.Column="1" Margin="20 0">
+                            <Label Name="lblModContratosFTermino" Content="Fecha Término" />
+                            <Label Name="lblModContratoFechaTermino" Content=""/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Inicio Vigencia -->
+                        <StackPanel Grid.Column="0" Margin="20 0">
+                            <Label Name="lblModContratoInicioVig" Content="Inicio Vigencia" />
+                            <Label Name="lblModContratoInicioVigencia" Content="" />
+                        </StackPanel>
+
+                        <!-- Fin Vigencia -->
+                        <StackPanel Grid.Column="1" Margin="20 0">
+                            <Label Name="lblModContratoFinVig" Content="Fin Vigencia"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Name="lblModContratoFinVigencia" Content=""/>
+                                <CheckBox Name="chbxModContratoVigente" IsEnabled="False" Content="Vigente" Grid.Column="1"/>
+                            </Grid>
+                            
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Codigo Plan-->
+                        <StackPanel Grid.Column="0" Margin="20 0">
+                            <Label Name="lblModContratoCodigoPlan" Content="Código Plan" />
+                            <ComboBox Name="cbxModContratoPlan" IsEnabled="False"/>
+                        </StackPanel>
+
+                        <!-- Salud -->
+                        <StackPanel Grid.Column="1" Margin="20 0">
+                            <Label Name="lblModContratoSalud" Content="Salud"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <RadioButton Name="rbModContratoSaludSi" Grid.Column="0" IsEnabled="False" Content="Sí"/>
+                                <RadioButton Name="rbModContratoSaludNo" Grid.Column="1" IsEnabled="False" Content="No"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Prima Anual -->
+                        <StackPanel Grid.Column="0" Margin="20 0">
+                            <Label Name="lblModContratoPAnual" Content="Prima Anual"/>
+                            <Label Name="lblModContratoPrimaAnual" Content=""/>
+                        </StackPanel>
+
+                        <!-- Prima Mensual -->
+                        <StackPanel Grid.Column="1" Margin="20 0">
+                            <Label Name="lblModContratoPMensual" Content="Prima Mensual"/>
+                            <Label Name="lblModContratoPrimaMensual" Content=""/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Margin="20 0">
+                            <Label Name="lblModContratoObservaciones" Content="Observaciones"  />
+                            <TextBox Name="txtModContratoObservaciones" Height="100" IsEnabled="False" Text=""  />
+                        </StackPanel>
+
+                        <Grid Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Style="{StaticResource ContractUpdate_}" Grid.Column="0" Name="btnModContratoGuardar" IsEnabled="False" Content="" Click="btnModContratoGuardar_Click" />
+                            <Button Style="{StaticResource ContractDelete_}" Grid.Column="1" Name="btnModContratoTerminar" IsEnabled="False" Click="btnModContratoTerminar_Click"/>
+                        </Grid>
+                    </Grid>
+
+                </StackPanel>
+
+            </StackPanel>
+            
+        </TabItem>
+    </TabControl>
+
 </Window>

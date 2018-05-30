@@ -36,10 +36,15 @@ namespace Aplicacion.Presentacion
 
             cbxFilterConRut.ItemsSource = conector.Clientes.ToList();
             cbxFilterNC.ItemsSource = conector.Contratoes.ToList();
-
-            //este tiene que dar los numeros
             cbxFilterNP.ItemsSource = conector.Plans.ToList();
 
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            rbRegistroIngRut.IsChecked = true;
+            rbModContratoIngNum.IsChecked = true;
+            cbxRegContratoRut.Visibility = Visibility.Hidden;
         }
 
         private void ActualizarListadoContratos()
@@ -172,41 +177,10 @@ namespace Aplicacion.Presentacion
             }
         }
 
-        private void btnModContratoIngNumero_Click(object sender, RoutedEventArgs e)
-        {
-            txtModContratoNumero.IsEnabled = true;
-            cbxModContratoNumero.IsEnabled = false;
-            btnModContratoBuscar.IsEnabled = true;
-
-            cbxModContratoNumero.SelectedIndex = -1;
-        }
-
-        private void btnModContratoSelNumero_Click(object sender, RoutedEventArgs e)
-        {
-            cbxModContratoNumero.IsEnabled = true;
-            txtModContratoNumero.IsEnabled = false;
-            btnModContratoBuscar.IsEnabled = true;
-
-            txtModContratoNumero.Text = "";
-
-        }
-
         private void btnModContratoBuscar_Click(object sender, RoutedEventArgs e)
         {
-            string num = "";
-
-            if(txtModContratoNumero.IsEnabled == true)
-            {
-                num = txtModContratoNumero.Text;
-                txtModContratoNumero.IsEnabled = false;
-                cbxModContratoNumero.SelectedIndex = -1;
-            }
-            else
-            {
-                num = cbxModContratoNumero.SelectedValue.ToString();
-                cbxModContratoNumero.IsEnabled = false;
-                txtModContratoNumero.Text = num;
-            }
+            
+            string num = txtModContratoNumero.Text;
 
             int cantContratos = conector.Contratoes.Count(con => con.Numero == num);
             if (cantContratos > 0)
@@ -214,7 +188,6 @@ namespace Aplicacion.Presentacion
                 Contrato c = conector.Contratoes.First(con => con.Numero == num);
                 txtModContratoNumero.Text = c.Numero;
 
-                txtModContratoRut.Text = c.RutCliente;
                 lblModContratoFechaCreacion.Content = c.FechaCreacion;
                 lblModContratoFechaTermino.Content = c.FechaTermino;
                 lblModContratoInicioVigencia.Content = c.FechaInicioVigencia;
@@ -311,37 +284,6 @@ namespace Aplicacion.Presentacion
             ActualizarListadoContratos();
         }
 
-        private void btnRegdContratoIngRut_Click(object sender, RoutedEventArgs e)
-        {
-            txtRegContratoRut.IsEnabled = true;
-            cbxRegContratoRut.IsEnabled = false;
-
-            cbxRegContratoRut.SelectedIndex = -1;
-
-            cbxRegContratoPlan.IsEnabled = true;
-            dpRegContratoInicioVigencia.IsEnabled = true;
-            rbRegContratoSaludSi.IsEnabled = true;
-            rbRegContratoSaludNo.IsEnabled = true;
-            txtRegContratoObservaciones.IsEnabled = true;
-            btnRegContratoRegistrar.IsEnabled = true;
-
-        }
-
-        private void btnRegContratoSelRut_Click(object sender, RoutedEventArgs e)
-        {
-            cbxRegContratoRut.IsEnabled = true;
-            txtRegContratoRut.IsEnabled = false;
-
-            txtRegContratoRut.Text = "";
-
-            cbxRegContratoPlan.IsEnabled = true;
-            dpRegContratoInicioVigencia.IsEnabled = true;
-            rbRegContratoSaludSi.IsEnabled = true;
-            rbRegContratoSaludNo.IsEnabled = true;
-            txtRegContratoObservaciones.IsEnabled = true;
-            btnRegContratoRegistrar.IsEnabled = true;
-        }
-
         private void cbxRegContratoRut_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(cbxRegContratoRut.SelectedIndex != -1)
@@ -350,6 +292,16 @@ namespace Aplicacion.Presentacion
                 txtRegContratoRut.Text = rut;
             }
             
+        }
+
+        private void cbxModContratoNumero_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbxModContratoNumero.SelectedIndex != -1)
+            {
+                string num = cbxModContratoNumero.SelectedValue.ToString();
+                txtModContratoNumero.Text = num;
+            }
+
         }
 
         private void cbxRegContratoPlan_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -501,7 +453,6 @@ namespace Aplicacion.Presentacion
         }
 
         //filtros
-        //filtros
         private void btnFilterContract_Click(object sender, RoutedEventArgs e)
         {
             if (cbxFilterConRut.SelectedValue != null)
@@ -533,6 +484,82 @@ namespace Aplicacion.Presentacion
             cbxFilterNC.SelectedIndex = -1;
             cbxFilterNP.SelectedIndex = -1;
             ActualizarListadoContratos();
+        }
+
+        private void btnRegBuscarCliente_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                String rut = txtRegContratoRut.Text;
+                int contador = conector.Clientes.Count(cli => cli.RutCliente == rut);
+                if (contador == 0)
+                {
+                    MessageBox.Show("No hay clientes con ese Rut.");
+
+                    cbxRegContratoPlan.SelectedIndex = -1;
+                    dpRegContratoInicioVigencia.SelectedDate = null;
+                    rbRegContratoSaludSi.IsChecked = false;
+                    rbRegContratoSaludNo.IsChecked = false;
+                    txtRegContratoObservaciones.Text = string.Empty;
+
+                    cbxRegContratoPlan.IsEnabled = false;
+                    dpRegContratoInicioVigencia.IsEnabled = false;
+                    rbRegContratoSaludSi.IsEnabled = false;
+                    rbRegContratoSaludNo.IsEnabled = false;
+                    txtRegContratoObservaciones.IsEnabled = false;
+                    btnRegContratoRegistrar.IsEnabled = false;
+                }
+                else
+                {
+                    Cliente c = conector.Clientes.First(cli => cli.RutCliente == rut);
+                    cbxRegContratoPlan.IsEnabled = true;
+                    dpRegContratoInicioVigencia.IsEnabled = true;
+                    rbRegContratoSaludSi.IsEnabled = true;
+                    rbRegContratoSaludNo.IsEnabled = true;
+                    txtRegContratoObservaciones.IsEnabled = true;
+                    btnRegContratoRegistrar.IsEnabled = true;
+
+                    txtRegContratoRut.Text = c.RutCliente;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                tabRegistroContrato.Focus();
+            }
+        }
+
+        private void rbRegistroBuscarRut_Checked(object sender, RoutedEventArgs e)
+        {
+            if (rbRegistroIngRut.IsChecked == true)
+            {
+                cbxRegContratoRut.Visibility = Visibility.Hidden;
+                txtRegContratoRut.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                cbxRegContratoRut.Visibility = Visibility.Visible;
+                cbxRegContratoRut.SelectedIndex = 0;
+                txtRegContratoRut.Visibility = Visibility.Hidden;
+
+            }
+        }
+
+        private void rbModContratoBuscarNum_Checked(object sender, RoutedEventArgs e)
+        {
+            if (rbModContratoIngNum.IsChecked == true)
+            {
+                cbxModContratoNumero.Visibility = Visibility.Hidden;
+                txtModContratoNumero.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                cbxModContratoNumero.Visibility = Visibility.Visible;
+                cbxModContratoNumero.SelectedIndex = 0;
+                txtModContratoNumero.Visibility = Visibility.Hidden;
+
+            }
         }
     }
 }

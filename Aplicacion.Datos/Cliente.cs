@@ -31,5 +31,10 @@ namespace Aplicacion.Datos
         public virtual Sexo Sexo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contrato> Contratoes { get; set; }
+
+        public override string ToString()
+        {
+            return RutCliente;
+        }
     }
 }
