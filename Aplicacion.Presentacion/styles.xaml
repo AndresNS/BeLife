@@ -22,13 +22,12 @@
             <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>-->
-
-    <!-- Estilos Generales de posicionamiento -->
+<!--
     <Style TargetType="TextBox">
         <Setter Property="Padding" Value="5"/>
         <Setter Property="Margin" Value="0 0 0 10"/>
     </Style>
-
+-->
     <Style TargetType="ComboBox">
         <Setter Property="Margin" Value="0 0 0 10"/>
         <Setter Property="Padding" Value="5"/>
@@ -38,12 +37,58 @@
         <Setter Property="Padding" Value="5"/>
     </Style>
 
+
+    
+
     <!-- base btn-->
 <Style TargetType="Button" x:Key="Reset_btn">
     <Setter Property="Width" Value="50"/>
     <Setter Property="Height" Value="50"/>
     <Setter Property="BorderThickness" Value="0"/>
+        <!-- fija un templeate sin esto no se puede aplicar el hover-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!-- IsMouseOver si está el mouse sobre el boton es true, si no esta es false-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="1"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Opacity" Value="0.8"/>
+            </Trigger>
+        </Style.Triggers>
 </Style>
+    
+    <!--
+        <Button.Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="DarkGoldenrod"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Button.Style>
+    -->
+    
+    
 <!-- agregar -->
 <Style TargetType="Button" x:Key="Agregar_" BasedOn="{StaticResource Reset_btn}">
     <Setter Property="Background">
@@ -55,48 +100,37 @@
     </Setter>
 </Style>
 <!-- delete -->
-<Style TargetType="Button" x:Key="Delete_" BasedOn="{StaticResource Reset_btn}">
-    <Setter Property="Button.Opacity" Value="0.8" />
-    <Setter Property="Background">
-        <Setter.Value>
-            <ImageBrush ImageSource="img/ClientDelete.png"/>
-        </Setter.Value>
-    </Setter>
-    <Style.Triggers>
-        <Trigger Property="IsMouseOver" Value="True">
-            <Setter Property="Button.Opacity" Value="1" />
-            <Setter Property="Background">
-                <Setter.Value>
-                    <ImageBrush ImageSource="img/ClientDelete.png"/>
-                </Setter.Value>
-            </Setter>
-        </Trigger>
-    </Style.Triggers>
-</Style>
-<!-- cliente -->
-<Style TargetType="Button" x:Key="Clientes_" BasedOn="{StaticResource Reset_btn}">
-    <Setter Property="Background">
-        <Setter.Value>
-            <ImageBrush ImageSource="img/Clientes.png"/>
-        </Setter.Value>
-    </Setter>
-</Style>
-<!-- cliente search-->
-<Style TargetType="Button" x:Key="ClientSearch_" BasedOn="{StaticResource Reset_btn}">
-    <Setter Property="Background">
-        <Setter.Value>
-            <ImageBrush ImageSource="img/ClientSearch.png"/>
-        </Setter.Value>
-    </Setter>
-</Style>
-<!-- cliente Update-->
-<Style TargetType="Button" x:Key="ClientUpdate_" BasedOn="{StaticResource Reset_btn}">
-    <Setter Property="Background">
-        <Setter.Value>
-            <ImageBrush ImageSource="img/ClientUpdate.png"/>
-        </Setter.Value>
-    </Setter>
-</Style>
+    <Style TargetType="Button" x:Key="Delete_" BasedOn="{StaticResource Reset_btn}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="img/ClientDelete.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- cliente -->
+    <Style TargetType="Button" x:Key="Clientes_" BasedOn="{StaticResource Reset_btn}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="img/Clientes.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- cliente search-->
+    <Style TargetType="Button" x:Key="ClientSearch_" BasedOn="{StaticResource Reset_btn}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="img/ClientSearch.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- cliente Update-->
+    <Style TargetType="Button" x:Key="ClientUpdate_" BasedOn="{StaticResource Reset_btn}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="img/ClientUpdate.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
 <!-- ContractAdd-->
 <Style TargetType="Button" x:Key="ContractAdd_" BasedOn="{StaticResource Reset_btn}">
     <Setter Property="Background">
